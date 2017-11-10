@@ -1,0 +1,86 @@
+execve("./exo_03.run", ["./exo_03.run", "test", "pasMakeFile"], [/* 36 vars */]) = 0
+brk(0)                                  = 0x1081000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cdcc000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/tls/x86_64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/tls/x86_64", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/tls/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/tls", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/x86_64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib/x86_64", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib", {st_mode=S_IFDIR|S_ISGID|0775, st_size=4096, ...}) = 0
+open("/usr/local/lib64/tls/x86_64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib64/tls/x86_64", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/tls/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib64/tls", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/x86_64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/lib64/x86_64", 0x7ffe6009c250) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\253\10\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=11390992, ...}) = 0
+mmap(NULL, 3670816, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb18c82d000
+mprotect(0x7fb18c99e000, 2097152, PROT_NONE) = 0
+mmap(0x7fb18cb9e000, 49152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x171000) = 0x7fb18cb9e000
+mmap(0x7fb18cbaa000, 13088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fb18cbaa000
+close(3)                                = 0
+open("/usr/local/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=179283, ...}) = 0
+mmap(NULL, 179283, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fb18cda0000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200U\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1051056, ...}) = 0
+mmap(NULL, 3146072, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb18c52c000
+mprotect(0x7fb18c62c000, 2093056, PROT_NONE) = 0
+mmap(0x7fb18c82b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xff000) = 0x7fb18c82b000
+close(3)                                = 0
+open("/usr/local/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000*\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=723552, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cd9f000
+mmap(NULL, 2185488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb18c316000
+mprotect(0x7fb18c32c000, 2093056, PROT_NONE) = 0
+mmap(0x7fb18c52b000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7fb18c52b000
+close(3)                                = 0
+open("/usr/local/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\34\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1738176, ...}) = 0
+mmap(NULL, 3844640, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb18bf6b000
+mprotect(0x7fb18c10c000, 2097152, PROT_NONE) = 0
+mmap(0x7fb18c30c000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a1000) = 0x7fb18c30c000
+mmap(0x7fb18c312000, 14880, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fb18c312000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cd9e000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cd9c000
+arch_prctl(ARCH_SET_FS, 0x7fb18cd9c740) = 0
+mprotect(0x7fb18c30c000, 16384, PROT_READ) = 0
+mprotect(0x7fb18c82b000, 4096, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cd9b000
+mprotect(0x7fb18cb9e000, 40960, PROT_READ) = 0
+mprotect(0x7fb18cdce000, 4096, PROT_READ) = 0
+munmap(0x7fb18cda0000, 179283)          = 0
+brk(0)                                  = 0x1081000
+brk(0x10b3000)                          = 0x10b3000
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb18cdcb000
+stat("test", {st_mode=S_IFREG|0644, st_size=5, ...}) = 0
+write(1, "test pasMakeFilee tampon: \n", 27) = 27
+open("test", O_RDONLY)                  = 3
+open("pasMakeFile", O_WRONLY|O_CREAT|O_APPEND, 0700) = 4
+read(3, "test\n", 5)                    = 5
+write(4, "test\n", 5)                   = 5
+read(3, "", 5)                          = 0
+write(4, "", 0)                         = 0
+close(3)                                = 0
+close(4)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
