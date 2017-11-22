@@ -2,7 +2,9 @@
  *
  * @File : exo_04.cxx
  *
- * @Synopsis : interruption d'un traitement sensible par un signal
+ * @Author : A. B. Dragut
+ *
+ * @Synopsis : 
  *
  **/
 #include <iostream> 
@@ -11,7 +13,8 @@
 #include <iomanip>
 #include <vector>
 #include <algorithm>       // sort()
-#include <csignal>         // SIGINT
+#include <csignal>         // sigemptyset(), sigaddset(),
+                           // SIG_BLOCK, SIG_UNBLOCK, SIGINT
 
 #include <unistd.h>        // sleep()
 
@@ -27,18 +30,31 @@ namespace
     CVInt V;
 
     void Affich (void)
-    {//affiche le vecteur
+    {
+        /** /
+
+        cout << "Vecteur trié : " << endl;
+        for (CVInt::size_type i = 0; i < V.size(); ++i)
+        {
+            cout << setw (5) << V [i] << flush;
+            ::sleep (1); 
+        }
+
+        */   //  autre version
+
         for (CVInt::const_iterator i = V.begin(); i < V.end(); ++i)
         {
             cout << setw (5) << *i << flush;
             ::sleep (1);
         }
-          cout << endl;
+        /**/
+
+        cout << endl;
 
     } // Affich()
 
     void Derout (int)
-    { //trie le vecteur
+    { 
         cout << "Tapez un entier : ";
         int IntLu;
         cin >> IntLu;
@@ -53,18 +69,27 @@ int main(int argc, char * argv [])
 {
   try {
    if (argc != 1)
-        throw CExc ("main()",string ("Usage : ") + argv [0]);
-    
+        throw CExc("main()",string ("Usage : ") + argv [0]);
+
     V.push_back ( 0);
     V.push_back (10);
     V.push_back (20);
 
     Signal (SIGINT, Derout);
+
+    sigset_t Masque; 
+    sigemptyset (&Masque);
+    sigaddset   (&Masque, SIGINT);
+
     for (;;)
     {
         ::sleep (10);
+
+	Sigprocmask (SIG_BLOCK,   & Masque, 0);
         Affich();
+        Sigprocmask (SIG_UNBLOCK, & Masque, 0);
     }
+
     return 0;
   }
   catch (const CExc & Exc) {
@@ -81,4 +106,8 @@ int main(int argc, char * argv [])
         return 1;
   }
 
+
+
 }  //  main ()
+
+

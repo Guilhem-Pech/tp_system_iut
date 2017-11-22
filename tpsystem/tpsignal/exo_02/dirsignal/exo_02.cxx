@@ -35,13 +35,12 @@ int main(int argc, char * argv [])
 	if (1 != argc) 
 	      throw CExc ("main()",string ("Usage : ") + argv [0]);
 
-
 	for (int NumSig = 1; NumSig < CstSigMax; ++NumSig) {
-	      	if(NumSig != SIGKILL && NumSig != SIGSTOP) {
-		struct sigaction Action;
+	      	if(NumSig != SIGKILL && NumSig != SIGSTOP) {  // Impossible de dérouter ces deux signaux
+		struct sigaction Action; // Déclaration de la struct
 	
-		Action.sa_flags   = SA_RESETHAND;
-		Action.sa_handler = Derout;
+		Action.sa_flags   = SA_RESETHAND; // Flag
+		Action.sa_handler = Derout; // La fonction de déroutement
 		sigemptyset (& Action.sa_mask);
 	
 		Sigaction (NumSig, &Action, 0);

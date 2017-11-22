@@ -1,0 +1,7 @@
+Les signaux, permettent une communication entre le système est un processus. Ou entre différents processus.
+Un signal ne porte qu'une seule information: son numéro de type Inr.
+Un processus peut s'envoyer un signal à lui même.
+Les signaux sont envoyés de manières asynchrone : lorsqu'un processus reçoit un signal son execution est interrompu et une fonction spécifique dite gestionaire de
+signal est appelé avec en paramètre le numéro du signal reçu.
+Lorsque cette fonction se termine le processus reprend là où il s'était arrété.
+

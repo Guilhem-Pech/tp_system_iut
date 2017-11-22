@@ -1,10 +1,3 @@
-/**
- *
- * @File : exo_04.cxx
- *
- * @Synopsis : interruption d'un traitement sensible par un signal
- *
- **/
 #include <iostream> 
 #include <exception>
 #include <string>
