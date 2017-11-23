@@ -20,18 +20,33 @@
 using namespace nsSysteme;
 using namespace std;
 
+namespace{
+	bool pere;
+	void Derout (int numSig){
+		cout << " PID du processus ayant reçu le signal: " << ::getpid() << '\n' 
+		     << "Signal reçu :" << ::strsignal(numSig) << '\n';  
+	}
+}
+
 int main(int argc, char * argv [])
 {
   try {
-	if(pid_t pidFils = fork()){ // On est donc dans le processus père
-		 cout << "PID du père : " << ::getpid() 
-		      << " PID du fils : " << pidFils << endl;
+	nsFctShell::DerouterSignaux(Derout);
+	pid_t pidFils;  
+	
+	if((pidFils = fork())){ // On est donc dans le processus père
+		pere = true;
+		Signal(SIGINT,SIG_DFL); // Remettre par default sigint
+		std::cout << "PID du père : " << ::getpid() 
+		          << " PID du fils : " << pidFils << std::endl;
 	}
 	else { // On est donc dans le processus fils
-
+		pere=false;
+		Signal(SIGTSTP, SIG_DFL); // Par default sigstop
 		cout << "PID (Fils): " << ::getpid() <<
 			" fils de :" << ::getppid() << endl;
 	} 
+	for(;;);
     return 0;
   }
   catch (const CExc & Exc) {
