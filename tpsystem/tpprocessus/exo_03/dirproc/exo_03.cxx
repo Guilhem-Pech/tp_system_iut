@@ -1,6 +1,6 @@
 /**
  *
- * @File : 
+ * @File : Exercice 3 processus
  *
  * @Author : A. B. Dragut
  *
@@ -9,7 +9,7 @@
 
 #include <string>
 #include <exception>
-#include <iostream>    
+#include <iostream>
 
 #include <unistd.h>     // getdtablesize()
 #include <sys/time.h>   // fd_set
@@ -33,14 +33,14 @@ int main(int argc, char * argv [])
   try {
     if (argc <= 1)
         return 1;
-      
+
     struct sigaction Act;
     Act.sa_flags = SA_NOCLDWAIT;
     sigemptyset(&Act.sa_mask);
     Act.sa_handler = Derout;
 
     Sigaction (SIGCHLD,&Act,NULL);
-    
+
     int NbreFils = atoi(argv[1]);
     for (int i = NbreFils; i >= 0 ; --i ){
         if (!Fork()){
@@ -62,7 +62,7 @@ int main(int argc, char * argv [])
         return 1;
   }
   catch (...) {
-        cerr << "Exception inconnue recue dans la fonction main()" 
+        cerr << "Exception inconnue recue dans la fonction main()"
              << endl;
         return 1;
   }

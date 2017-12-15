@@ -1,6 +1,6 @@
 /**
  *
- * @File : 
+ * @File : Exercice 2 Processus
  *
  * @Author : A. B. Dragut
  *
@@ -9,7 +9,7 @@
 
 #include <string>
 #include <exception>
-#include <iostream>    
+#include <iostream>
 
 #include <unistd.h>     // getdtablesize()
 #include <sys/time.h>   // fd_set
@@ -36,9 +36,9 @@ int main(int argc, char * argv [])
     ::pid_t TabDesPID[NbrFils];
     for (int i(NbrFils); i ;--i){
         if (!(TabDesPID[i] = Fork())){
-            cout << "Le processus "<< ::getpid() << " va  dormir pendant " << i << " secondes" << endl; 
+            cout << "Le processus "<< ::getpid() << " va  dormir pendant " << i << " secondes" << endl;
             ::sleep(i); // Fait dormir le processus pour i secondes
-            return i; 
+            return i;
         }
     }
     int status;
@@ -50,7 +50,7 @@ int main(int argc, char * argv [])
         if (WIFEXITED(status))
             cout << "Statut exit : " << WEXITSTATUS(status) << endl;
 
-        if (WIFEXITED(status)) 
+        if (WIFEXITED(status))
              cout << "Statut exit (avec macro): " << GETSTATUS (status) << endl;
 
 
@@ -68,7 +68,7 @@ int main(int argc, char * argv [])
         return 1;
   }
   catch (...) {
-        cerr << "Exception inconnue recue dans la fonction main()" 
+        cerr << "Exception inconnue recue dans la fonction main()"
              << endl;
         return 1;
   }
