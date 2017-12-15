@@ -1,6 +1,6 @@
 /**
  *
- * @File : 
+ * @File :
  *
  * @Author : Guilhem PECH (# Le plus beau)
  *
@@ -9,7 +9,7 @@
 
 #include <string>
 #include <exception>
-#include <iostream>    
+#include <iostream>
 
 #include <unistd.h>     // getdtablesize()
 #include <sys/time.h>   // fd_set
@@ -26,11 +26,11 @@ int main(int argc, char * argv [])
     int pipe[2];
     Pipe(pipe);
     int fils = Fork();
-    int TailleMessage; 
+    int TailleMessage;
     if (fils == 0){
-        Close(pipe[1]);        
-        int VraieFinPasRecue = 1 ; 
-        while (VraieFinPasRecue) { //tant que on n'as pas recu  '#' on continue 
+        Close(pipe[1]);
+        int VraieFinPasRecue = 1 ;
+        while (VraieFinPasRecue) { //tant que on n'as pas recu  '#' on continue
             int OctetsLus = Read (pipe[0], &TailleMessage, sizeof (int));
             char Message [TailleMessage + 1];
             if(OctetsLus) {
@@ -57,13 +57,13 @@ int main(int argc, char * argv [])
         for (int i = 1; i < argc ; ++i ){
             int messageLength = strlen(argv[i]);
             Write(pipe[1],&messageLength,sizeof(int));
-            Write(pipe[1],argv[i],messageLength);        
+            Write(pipe[1],argv[i],messageLength);
          }
         char endCommunication = '#';
         int messageLength = 1;
         Write (pipe[1],&messageLength,sizeof(int));
         Write (pipe[1],&endCommunication,1);
-        
+
     }
     return 0;
   }
@@ -76,10 +76,8 @@ int main(int argc, char * argv [])
         return 1;
   }
   catch (...) {
-        cerr << "Exception inconnue recue dans la fonction main()" 
+        cerr << "Exception inconnue recue dans la fonction main()"
              << endl;
         return 1;
   }
-
-
 }  //  main()
